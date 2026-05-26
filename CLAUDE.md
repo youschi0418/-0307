@@ -19,6 +19,28 @@ This is a newly initialized repository. No source code, build system, or depende
 - **Commit messages**: Use clear, descriptive messages summarizing the change
 - **Push**: Always use `git push -u origin <branch-name>`
 
+### Launching Claude via cmux
+
+This repo is set up for [craigsc/cmux](https://github.com/craigsc/cmux), a tmux-based launcher that pairs Claude Code with a git worktree per branch.
+
+Install once:
+
+```bash
+curl -fsSL https://github.com/craigsc/cmux/releases/latest/download/install.sh | sh
+```
+
+Then from the repo root:
+
+```bash
+cmux new <branch>     # create worktree under .worktrees/<branch>/ and launch Claude
+cmux start <branch>   # resume an existing worktree
+cmux ls               # list active worktrees
+cmux merge [branch]   # merge the worktree branch back
+cmux rm [branch]      # remove worktree and branch
+```
+
+Project-specific initialization lives in `.cmux/setup` (runs on `cmux new`). `.worktrees/` is gitignored.
+
 ### Getting Started
 
 When adding code to this repository, update this CLAUDE.md with:

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# cmux setup hook: runs once when `cmux new <branch>` creates a new worktree.
+# Add project initialization here (install deps, symlink secrets, etc.).
+
+set -euo pipefail
+
+echo "cmux: no project setup required yet."
